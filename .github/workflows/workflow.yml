@@ -2,7 +2,7 @@ name: IEbank backend CICD
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "correction" ]
   schedule:
   - cron: "0 23 * * *"
 
