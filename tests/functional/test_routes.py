@@ -29,4 +29,14 @@ def test_create_account(testing_client):
     response = testing_client.post('/accounts', json={'name': 'John Doe', 'currency': '€'})
     assert response.status_code == 200
 
+ def test_create_account(testing_client):
+    """
+    GIVEN a Flask application
+    WHEN the '/accounts/<id>' receives a PUT request
+    THEN check the response is valid
+    """
+    response = testing_client.put('/accounts/1', json={'name': 'John Doe', 'currency': '€'})
+    assert response.status_code == 200
+    assert response.json['name'] == 'John Doe"'
+    
 
